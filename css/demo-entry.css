@@ -1,0 +1,202 @@
+.demo-grid {
+	--body-text: #252525;
+	--body-text-alt: #a02d2d;
+	--body-bg: #e4e4e4;
+	--link-text: #252525;
+	--link-text-hover: #fff;
+	--content-font: 'Raleway', sans-serif;
+}
+
+body {
+	font-family: var(--content-font);
+}
+
+.meraki-font-1 {
+	font-family: 'Raleway', sans-serif;;
+}
+
+.content {
+	--pieces-height: 100vh;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.page-nav {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	font-family: var(--content-font);
+}
+
+.page-nav__item {
+	font-size: 6vh;
+}
+
+.page-nav__item--close {
+	font-size: 1.85em;
+	margin: 1em 0 0 0;
+	color: var(--body-text-alt);
+	position: relative;
+}
+
+.page-nav__item--close:hover,
+.page-nav__item--close:focus {
+	color: var(--body-text-alt);
+	text-decoration: line-through;
+}
+
+.content__title {
+	font-size: 5vh;
+	margin: 0;
+	font-weight: normal;
+	cursor: pointer;
+	font-family: var(--content-font);
+	color: var(--body-text-alt);
+	position: relative;
+}
+
+.page-nav--open ~ .content__title {
+	pointer-events: none;
+}
+
+.content .pieces {
+	--pieces-height: 65vh;
+	height: var(--pieces-height);
+	width: calc(var(--pieces-height) * calc(888/1000));
+	position: absolute;
+	left: 50%;
+	top: 55%;
+	margin-left: calc(-1 * var(--pieces-height) * calc(888/1000) / 2);
+	margin-top: calc(-1 * var(--pieces-height) / 2);
+	pointer-events: none;
+}
+
+@media screen and (max-width: 40em) {
+	.content {
+		--pieces-height: 115vh;
+		height: var(--pieces-height);
+		margin-bottom: 8em;
+	}
+	.content__title {
+		font-size: 18vh;
+	}
+	.page-nav__item {
+		font-size: 3vh;
+		padding: 0px 0px;
+	}
+}
+
+/*-----------------MERAKI CSS ----------------*/
+.meraki-container {
+	background-color: var(--body-bg);
+}
+
+.meraki-banner {
+	position: relative;
+	top: 50%;
+	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+
+.meraki-image-center {
+	height: 37vh;
+}
+
+.meraki-text-center {
+	height: 37vh;
+}
+
+.parallax-hosting {
+
+    background-image: url('../img/servers-machines.jpg');
+
+    height: 100%;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-web {
+
+    background-image: url('../img/webdev-mac-2.jpg');
+
+    height: 100%;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-app {
+
+    background-image: url('../img/mobile-web-app.jpg');
+
+    height: 100%;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax-sys {
+
+    background-image: url('../img/erp.jpg');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media only screen and (max-device-width: 1024px) {
+    .parallax-hosting {
+        background-attachment: scroll;
+    }
+
+	.parallax-web {
+        background-attachment: scroll;
+    }
+}
+
+@media screen and (max-width: 500px) {
+	.meraki-image-center {
+		height: 28vh;
+	}
+
+	.meraki-text-center {
+		height: 50vh;
+	}
+}
+
+@media screen and (max-height: 400px) {
+	.meraki-image-center {
+		height: 90vh;
+	}
+
+	.meraki-text-center {
+		height: 90vh;
+	}
+}
+
+@media screen and (max-height: 350px) {
+	.meraki-image-center {
+		height: 100vh;
+	}
+
+	.meraki-text-center {
+		height: 90vh;
+	}
+}
